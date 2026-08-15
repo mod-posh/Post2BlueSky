@@ -6,7 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
-## [[0.0.2.13]](https://github.com/mod-posh/Post2Bluesky/releases/tag/v0.0.3.0) - 2025-01-21
+## [[0.0.3.1]](https://github.com/mod-posh/Post2Bluesky/releases/tag/v0.0.3.1) - 2028-08-15
+
+### **Changes Made**
+
+1. **Removed unnecessary repository checkout**:
+   - The composite action no longer runs `actions/checkout@v3` before invoking `post2bsky.ps1`.
+   - The script never reads any files from the caller's repository, so the checkout step was redundant and could fail (e.g. `The requested URL returned error: 400`) when the action is consumed from other repositories, such as in a `workflow_run` triggered workflow.
+
+---
+
+## [[0.0.3.0]](https://github.com/mod-posh/Post2Bluesky/releases/tag/v0.0.3.0) - 2025-01-21
 
 ### **Changes Made**
 
