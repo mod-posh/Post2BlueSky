@@ -13,10 +13,9 @@ The "Post2Bluesky" Github Action posts a message to your Bsky social account. Yo
 
 ## Workflow File
 
-You can trigger the `action.yml` by `workflow_call` to post a notification automatically. The workflow contains several steps to act:
+You can trigger the `action.yml` by `workflow_call` to post a notification automatically. The workflow contains a single step to act:
 
-1. Checkout the repository
-2. Call the `post2bsky.ps1` script
+1. Call the `post2bsky.ps1` script
 
 ### Workflow Inputs
 
