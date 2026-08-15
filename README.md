@@ -13,7 +13,7 @@ The "Post2Bluesky" Github Action posts a message to your Bsky social account. Yo
 
 ## Workflow File
 
-You can trigger the `action.yml` by `workflow_call` to post a notification automatically. The workflow contains a single step to act:
+You can invoke the `action.yml` from a workflow step to post a notification automatically. The action contains a single step to act:
 
 1. Call the `post2bsky.ps1` script
 
@@ -35,12 +35,14 @@ There a few different ways you could use this action, here is an example of one 
 ```yaml
 jobs:
   send_notification:
-    uses: mod-posh/Post2BlueSky@v0.0.3.1
-    with:
-      message: '"This is a test post with a link to [github](https://www.github.com)"'
-      verbose: 'verbose'
-      bluesky_api_key: ${{ secrets.bluesky_api_key }}
-      bluesky_identifier: ${{ secrets.bluesky_identifier }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mod-posh/Post2BlueSky@v0.0.3.1
+        with:
+          message: '"This is a test post with a link to [github](https://www.github.com)"'
+          verbose: 'verbose'
+          bluesky_api_key: ${{ secrets.bluesky_api_key }}
+          bluesky_identifier: ${{ secrets.bluesky_identifier }}
 ```
 
 > [!Note]
